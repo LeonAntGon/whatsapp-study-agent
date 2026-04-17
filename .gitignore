@@ -1,0 +1,32 @@
+# --- SEGURIDAD ---
+# Jamás subir claves API o tokens
+.env
+
+# --- ENTORNOS VIRTUALES ---
+# No queremos subir las librerías instaladas, solo la lista (requirements.txt)
+venv/
+.venv/
+env/
+bin/
+lib/
+include/
+
+# --- PYTHON INTERNO ---
+# Archivos temporales que genera Python al ejecutarse
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+
+# --- IDEs Y SISTEMA ---
+# Archivos específicos de editores o del sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- ARCHIVOS DE DATOS LOCALES ---
+# Si quieres que tus apuntes de Notion de prueba no se suban, descomenta la siguiente línea:
+# notion_content.txt
