@@ -77,7 +77,6 @@ async def receive_message(request: Request, background_tasks: BackgroundTasks):
             user_text = message['text']['body']
             
             # --- FIX ARGENTINA 🇦🇷 ---
-            # Si el número viene como 549..., le quitamos el 9 para responderle al 54...
             if raw_phone.startswith("549"):
                 user_phone = "54" + raw_phone[3:]
             else:
@@ -93,4 +92,6 @@ async def receive_message(request: Request, background_tasks: BackgroundTasks):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Render.com asigna un puerto dinámico a través de la variable de entorno PORT
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
